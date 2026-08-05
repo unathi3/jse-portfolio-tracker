@@ -44,6 +44,7 @@ def create_tables():
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS sectors (
             ticker TEXT PRIMARY KEY,
+            company_name TEXT NOT NULL,
             sector TEXT NOT NULL
         )
     """)

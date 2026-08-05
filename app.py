@@ -7,7 +7,7 @@ app = Flask(__name__)
 def home():
     conn = get_connection()
     rows = conn.execute("""
-        SELECT s.ticker, s.sector, ph.close_price, ph.date
+        SELECT s.ticker, s.company_name, s.sector, ph.close_price, ph.date
         FROM sectors s
         LEFT JOIN price_history ph ON s.ticker = ph.ticker
         WHERE ph.id IN (
@@ -23,3 +23,5 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+    

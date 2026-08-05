@@ -8,6 +8,7 @@
     <table border="1" cellpadding="8">
         <tr>
             <th>Ticker</th>
+            <th>Company Name</th>
             <th>Sector</th>
             <th>Latest Price (R)</th>
             <th>Date</th>
@@ -15,6 +16,7 @@
         {% for stock in stocks %}
         <tr>
             <td>{{ stock.ticker }}</td>
+            <td>{{ stock.company_name }}</td>
             <td>{{ stock.sector }}</td>
             <td>R{{ "%.2f"|format(stock.close_price) }}</td>
             <td>{{ stock.date }}</td>
