@@ -6,7 +6,7 @@ for ticker in tickers: #for each ticker in my array of tickers
     stock = yf.Ticker(ticker)
     info = stock.info
     price_cents = info.get("currentPrice") or info.get("regularMarketPrice") 
-    price_rands = price_cents / 100 #JSe prices from yfinance are in cents, convert to Rands
+    price_rand = price_cents / 100 #JSe prices from yfinance are in cents, convert to Rands
     name = info.get("longName", "Unknown")
     print(f"{ticker} ({name}): R{price_rand:.2f}")
 
