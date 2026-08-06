@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log a Transaction</title>
+</head>
+<body>
+    <h1>Log a New Transaction</h1>
+    <form method="POST">
+        <label>Ticker:</label>
+        <select name="ticker" required>
+            {% for t in tickers %}
+            <option value="{{ t.ticker }}">{{ t.ticker }} - {{ t.company_name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Type:</label>
+        <select name="transaction_type" required>
+            <option value="BUY">BUY</option>
+            <option value="SELL">SELL</option>
+        </select><br><br>
+
+        <label>Quantity:</label>
+        <input type="number" name="quantity" step="0.01" required><br><br>
+
+        <label>Price per share (R):</label>
+        <input type="number" name="price_per_share" step="0.01" required><br><br>
+
+        <label>Date:</label>
+        <input type="date" name="transaction_date" required><br><br>
+
+        <button type="submit">Log Transaction</button>
+    </form>
+    <a href="/">Back to home</a>
+</body>
+</html>
